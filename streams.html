@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template &middot; Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <!-- <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet"> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="jquery.js" type="text/javascript" charset="utf-8"> </script>
+    <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
+    <script src="d3.v4.min.js" type="text/javascript" charset="utf-8"> </script>
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+    <script src="moment.min.js" type="text/javascript" charset="utf-8"> </script>
+
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+<!-- Adding fancy fonts -->
+<link rel="stylesheet" href="fancyfont" type="text/css" media="screen" title="no title" charset="utf-8">
+<!-- <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="fancyfont1" type="text/css" media="screen" title="no title" charset="utf-8">
+<!-- <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css"> -->
+<link href="custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+<style>
+body{
+	background-color: AliceBlue;
+}
+</style>
+
+    <div class="container-narrow">
+
+      <hr>
+
+      <div class="jumbotron">
+        <h1>WaterWatch 2.0</h1>
+        <p class="lead">Exploring alternatives to environmental data collection.</p>
+        <a class="btn btn-large btn-success" href="TheData">See the Data</a>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid marketing">
+        <div class="span6">
+          <h4>The People</h4>
+          <p>Michael is research associate at the University of Nebraska Lincoln. He is fascinated by using the power of technology and the internet of things to gather information and data from our everyday lives.</p>
+	  <p>Kelly is a long-time stream researcher and citizen monitoring volunteer, ultimately seeking to find ways to better understand the natural world around us.</p>
+	  <img src="wingra.jpg" width="300" height="150">
+        </div>
+
+        <div class="span6">
+          <h4>The Story</h4>
+          <p>Streams are really important. They provide essential functions such as drinking water, crop irrigation, recreation, habitat for aquatic ecosystems, and hydroelectric power. To gain a better on the state of our local waterways, each year, thousands of volunteers and researchers participate in stream monitoring. They monitor a variety of parameters, including temperature, pH, water flow, and dissolved oxygen, which have implications for overall stream health. For example, warmer streams are often lower in dissolved oxygen and subsequently support different aquatic species. </p>
+	  <p> We think that the internet of things will transform how we extract information from the environment. Currently, stream information is labor intensive and often requires expensive equipment in order to collect consistent data.</p>        
+</div>
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <h2> <center> The Data </center> </h2>
+        <h3> <center> Light </center> </h3>
+        <svg class="lightgraph" height="500" width="960" style="margin-left: -100"></svg>
+        <h3><center>Temperature</center></h3>
+        <svg class="tempgraph" height="500" width="960" style="margin-left: -100"></svg>
+        <h3><center>Sound</center></h3>
+        <svg class="soundgraph" height="500" width="960" style="margin-left: -100"></svg>
+        <script src="graph.js" type="text/javascript" charset="utf-8"> </script>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+  <script type="text/javascript" charset="utf-8">
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  var socket = io();
+  socket.on('temp', function(data){
+    updateTemp(data);
+  });
+  socket.on('light', function(data){
+    updateLight(data);
+  });
+  socket.on('sound', function(data){
+    updateSound(data);
+  });
+});
+  </script>
+</html>

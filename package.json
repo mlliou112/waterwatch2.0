@@ -1,0 +1,29 @@
+{
+  "name": "waterwatch2.0",
+  "version": "1.0.0",
+  "description": "WaterWatch 2.0 ---- Intel Hacks 2017",
+  "main": "d3.v4.min.js",
+  "dependencies": {
+    "d3": "^4.10.0",
+    "d3-time": "^1.0.7",
+    "express": "^4.15.3",
+    "moment": "^2.18.1",
+    "noble": "^1.8.1",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlliou112/waterwatch2.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlliou112/waterwatch2.0/issues"
+  },
+  "homepage": "https://github.com/mlliou112/waterwatch2.0#readme"
+}
