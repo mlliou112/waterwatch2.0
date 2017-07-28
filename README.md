@@ -55,14 +55,14 @@ The server will be up and running searching for the bluetooth device with the co
 Once subscribed, the website can be viewed at `localhost:3000`. You will see a description of our project and goals on the first part of the website, and three graphs corresponding to the sensor values on the Arduino in the "Data" section.
 
 ## Technology Details
-The backend was written in [Node.js](https://nodejs.org/en/), using [Noble](https://github.com/sandeepmistry/noble) to simulate a BLE Central device. The data received on the server is pushed to the client over [socket.io](https://socket.io/) for real-time updates and the front-end was rendered with help of [bootstrap](http://getbootstrap.com/) and [d3.js](https://d3js.org/).
+The backend was written in [Node.js](https://nodejs.org/en/), using [Noble](https://github.com/sandeepmistry/noble) to simulate a BLE Central device. The data received on the server is pushed to the client over [socket.io](https://socket.io/) for real-time updates and the front-end is rendered with help of [bootstrap](http://getbootstrap.com/) and [d3.js](https://d3js.org/).
 
-The Arduino uses bluetooth report the sensor values. It is programmed to only update values when the value has changes, and will only check every two seconds. This can be configured in the provided sketch file.
+The Arduino uses bluetooth to report the sensor values. It is programmed to only update values when the value has changed, and will only check every two seconds. This can be configured in the provided sketch file.
 
 ## Future Extensions
 Additional sensors can be added to the Arduino, such as Dissolved Oxygen, or Flow Rate sensors to be placed inside the water. Furthermore, the range can be modified by transmitting the data over radio to a router and centralized on a website. It is also possible to monitor many streams at once with many IoT devices and create an aggregated view of all streams in the area.
 
-We believe this project is a first step for the future of environmental monitors and citizen science that will improve reproducibility and cut costs.
+We believe this project is a first step for the future of environmental monitoring and citizen science that will improve reproducibility and cut costs.
 
 ## Acknowledgements
 
