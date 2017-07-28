@@ -3,7 +3,10 @@ WaterWatch 2.0
 Intel Hacks 2017
 
 ## Mission Statement and Goals
-The world of environmental monitoring, especially in regards to citizen science
+Streams are really important. They provide essential functions such as drinking
+water, crop irrigation, recreation, habitat for aquatic ecosystems, and
+hydroelectric power. The world of environmental monitoring, especially in
+regards to citizen science
 monitoring, is fairly labor intensive, time consuming, and often requires
 expensive equipment and sensor kits. With Water Watch 2.0, we're looking to
 ease the data collection process by creating a customizable solution that is
